@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">牛逼金融</string>
+    <string name="txt_tab_1">首页</string>
+    <string name="txt_tab_2">投资</string>
+    <string name="txt_tab_3">发现</string>
+    <string name="txt_tab_4">我的</string>
+    <string name="txt_tab_singed">签到</string>
+    <string name="txt_tab_service">服务</string>
+    <string name="txt_tab_recommend">推荐好友</string>
+    <string name="txt_tab_action">活动中心</string>
+    <string name="txt_home_bottom_left">金额 %1$s</string>
+    <string name="txt_home_bottom_right">期限 %1$s</string>
+    <string name="txt_ivest">往期年化收益(%)</string>
+    <string name="txt_money">金额</string>
+    <string name="txt_mouth">期限(月)</string>
+
+</resources>

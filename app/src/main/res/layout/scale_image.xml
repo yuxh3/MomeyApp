@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_home"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/iv_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/a2" />
+
+    <ImageView
+        android:id="@+id/iv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/a1" />
+
+    <ImageView
+        android:id="@+id/iv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/a0" />
+
+</FrameLayout>
+
+    <!--<TextView--><!--android:padding="3dp"--><!--android:background="@drawable/splash_tv_bg"--><!--android:layout_alignParentRight="true"--><!--android:layout_alignParentBottom="true"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:text="1/2"--><!--android:textColor="@color/txt_baclk_theme"--><!--android:layout_marginRight="15dp"--><!--android:layout_marginBottom="15dp"/>-->

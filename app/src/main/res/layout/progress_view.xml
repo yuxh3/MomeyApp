@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_lv"
+        android:layout_width="20dp"
+        android:layout_height="16dp"
+        android:background="@drawable/progress_lv_bg"
+        android:text="LV0"
+        android:textSize="6dp"
+        android:textColor="@color/txt_witch_theme"
+        android:gravity="center_horizontal|bottom"/>
+
+    <RelativeLayout
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/tv_lv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/progress_view_bg"
+        />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/progress_control"
+        />
+
+    </RelativeLayout>
+
+</RelativeLayout>

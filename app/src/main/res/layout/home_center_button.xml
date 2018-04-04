@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:padding="2dp"
+        android:id="@+id/rb_group"
+        style="@style/view_Horizontal"
+        android:background="@color/transparent"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:drawablePadding="5dp"
+            android:textColor="@color/txt_baclk_theme"
+            android:id="@+id/rb_btn_singed"
+            style="@style/tab_menu_item"
+            android:text="@string/txt_tab_singed"
+            android:drawableTop="@drawable/nav_icon_sign_home_default"/>
+        <RadioButton
+            android:drawablePadding="5dp"
+            android:textColor="@color/txt_baclk_theme"
+            android:id="@+id/rb_btn_service"
+            style="@style/tab_menu_item"
+            android:text="@string/txt_tab_service"
+            android:drawableTop="@drawable/nav_icon_service_home_default"/>
+
+        <RadioButton
+            android:drawablePadding="5dp"
+            android:textColor="@color/txt_baclk_theme"
+            android:id="@+id/rb_btn_recommend"
+            style="@style/tab_menu_item"
+            android:text="@string/txt_tab_recommend"
+            android:drawableTop="@drawable/nav_icon_recommend_home_default"/>
+
+        <RadioButton
+            android:drawablePadding="5dp"
+            android:textColor="@color/txt_baclk_theme"
+            android:id="@+id/rb_btn_action"
+            style="@style/tab_menu_item"
+            android:text="@string/txt_tab_action"
+            android:drawableTop="@drawable/group4"/>
+
+
+    </RadioGroup>
+
+
+
+</LinearLayout>

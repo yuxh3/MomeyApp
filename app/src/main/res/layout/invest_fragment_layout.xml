@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.example.yuxinhua.momeyapp.widgt.HeadTextView
+        android:id="@+id/head_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:center = "投资"
+        app:leftIcon = "@drawable/public_button_back"/>
+
+    <LinearLayout
+        android:background="@color/inverst_head_yellow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.example.yuxinhua.momeyapp.widgt.RVPindicator_1
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/rv_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:item_count = "2"
+        android:background="@color/inverst_head_yellow"
+        app:indicator_style = "triangle"
+        app:text_color_hightlight="@color/txt_witch_theme"
+        app:text_color_normal="@color/txt_gray_theme">
+
+    </com.example.yuxinhua.momeyapp.widgt.RVPindicator_1>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ivest_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
