@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
 
     <TextView
+        android:layout_marginLeft="16dp"
         android:id="@+id/tv_lv"
         android:layout_width="20dp"
         android:layout_height="16dp"
         android:background="@drawable/progress_lv_bg"
         android:text="LV0"
-        android:textSize="6dp"
-        android:textColor="@color/txt_witch_theme"
+        android:textSize="4sp"
+        android:textColor="@color/txt_baclk_theme"
         android:gravity="center_horizontal|bottom"/>
 
     <RelativeLayout
@@ -20,7 +22,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:id="@+id/tv_leftt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LV0"
+            android:textColor="@color/txt_baclk_theme"
+            android:textSize="6sp"/>
+
     <ImageView
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/tv_leftt"
         android:id="@+id/iv_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,11 +43,21 @@
         />
 
     <ImageView
+        android:layout_toRightOf="@+id/tv_leftt"
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:src="@drawable/progress_control"
         />
 
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_bg"
+            android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LV1"
+            android:textColor="@color/txt_baclk_theme"
+            android:textSize="6sp"/>
     </RelativeLayout>
 
 </RelativeLayout>

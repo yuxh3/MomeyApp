@@ -13,5 +13,8 @@
     <string name="txt_ivest">往期年化收益(%)</string>
     <string name="txt_money">金额</string>
     <string name="txt_mouth">期限(月)</string>
+    <string name="txt_jifen">积分</string>
+    <string name="txt_yue">余额</string>
+    <string name="txt_fenshu">等级分数</string>
 
 </resources>

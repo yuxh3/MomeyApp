@@ -6,7 +6,7 @@
 
     <solid android:color="@color/txt_witch_theme"/>
 
-    <size android:height="10dp"
+    <size android:height="8dp"
         android:width="100dp"/>
 
 </shape>

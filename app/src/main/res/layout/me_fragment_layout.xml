@@ -13,19 +13,79 @@
 
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:id="@+id/iv_circle"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:src="@drawable/men"
             android:scaleType="centerCrop"
-            android:layout_centerVertical="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"/>
+
+
+        <include
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_circle"
+            layout="@layout/progress_view"
             android:layout_marginLeft="60dp"/>
 
     <com.example.yuxinhua.momeyapp.widgt.WaveView
         android:layout_width="match_parent"
         android:layout_height="5dp"
+        android:paddingBottom="10dp"
         android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
+
+<include
+    layout="@layout/me_item_layout"/>
+
+    <LinearLayout
+        android:paddingBottom="15dp"
+        android:background="@color/txt_witch_theme"
+        android:paddingTop="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@drawable/recharge"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="32dp"
+            android:background="@drawable/withdraw"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/me_recycle_view"
+        android:layout_marginTop="20dp"
+        android:background="@color/txt_witch_theme"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 
 </LinearLayout>
