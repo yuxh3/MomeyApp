@@ -74,6 +74,7 @@ class ViewPagerSaveFragment : BaseFragment() {
         val diffResult = DiffUtil.calculateDiff(Callback(data,mNewData),true)
         diffResult.dispatchUpdatesTo(adapter)
     }
+
     /**
      * 下拉刷新
      */

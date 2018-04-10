@@ -9,12 +9,15 @@
     <!--<color name="colorAccent">#00000000</color>-->
 
     <color name="txt_gray_theme">#7A7E83</color>
-    <color name="txt_gray_tranmser">#09F5F5F5</color>
+    <color name="txt_gray_tranmser">#33F5F5F5</color>
     <color name="txt_witch_theme">#fff</color>
+    <color name="txt_find_theme">#efd178</color>
+    <color name="me_decoration_color">#267A7E83</color>
     <color name="txt_bg">#227A7E83</color>
     <color name="txt_baclk_theme">#000</color>
     <color name="transparent">#00000000</color>
     <color name="btn_theme_red">#F75359</color>
     <color name="inverst_head_yellow">#FFEAC04B</color>
     <color name="txt_orange">#FF6F00</color>
+
 </resources>

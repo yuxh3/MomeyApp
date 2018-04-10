@@ -17,4 +17,16 @@
     <string name="txt_yue">余额</string>
     <string name="txt_fenshu">等级分数</string>
 
+    <string-array name="me_adapter">
+        <item>资产统计</item>
+        <item>投资项目</item>
+        <item>交易明细</item>
+        <item>回款日历</item>
+        <item>实名认证</item>
+        <item>我的礼包</item>
+        <item>账户管理</item>
+        <item>银行存管</item>
+        <item>更多内容</item>
+    </string-array>
+
 </resources>

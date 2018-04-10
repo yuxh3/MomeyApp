@@ -17,4 +17,19 @@ data class InvestData(
         var progress:String
 ):BaseData()
 
+data class MeData(
+        var id:Int,
+        var message:String
+
+)
+
+data class FindData(
+        var type:Int,
+        var data:ArrayList<FindItemData>?
+)
+
+data class FindItemData(
+        var money: String,
+        var content:String
+)
 open class BaseData()

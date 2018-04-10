@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/txt_witch_theme">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/disimage"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品兑换"
+            android:textSize="16sp"
+            android:textColor="@color/txt_gray_theme"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/find_three_back"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品兑换"
+            android:textSize="16sp"
+            android:textColor="@color/inverst_head_yellow"/>
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/find_to_right"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/to_right"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

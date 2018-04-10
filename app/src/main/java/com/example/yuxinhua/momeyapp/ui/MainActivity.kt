@@ -34,6 +34,8 @@ class MainActivity : BaseActivity() {
     }
     /**
      * 初始化布局，以及底部的按钮触摸事件
+     *
+     * http://www.yufex.com/fileContext/resource/index_config/imageResource?fileId=2c90d582627afdde0162ad16dba22ed2
      */
     fun init(){
         viewList = arrayListOf()

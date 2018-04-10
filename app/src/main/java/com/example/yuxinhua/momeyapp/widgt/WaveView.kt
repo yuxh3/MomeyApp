@@ -59,7 +59,7 @@ class WaveView:View{
         })
 
         mAnimator.repeatCount = ValueAnimator.INFINITE
-        mAnimator.setDuration(2000)
+        mAnimator.setDuration(3000)
         mAnimator.start()
     }
 

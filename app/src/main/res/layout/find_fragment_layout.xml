@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
-    <TextView
+
+    <LinearLayout
+        android:background="@color/txt_find_theme"
+        android:orientation="vertical"
+        android:id="@+id/find_ll_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="我是发现界面"/>
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lv0"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/txt_witch_theme"
+            android:background="@drawable/find_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="积分商城"
+            android:textColor="@color/txt_baclk_theme"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="签到"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/txt_gray_theme"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/find_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/find_recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/txt_gray_tranmser"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>
