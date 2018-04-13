@@ -4,6 +4,8 @@ import android.graphics.Color
 import android.os.*
 import android.support.v4.app.Fragment
 import android.view.WindowManager
+import com.example.notwork.mvp.model.HomeModel
+import com.example.notwork.mvp.present.HomePresent
 import com.example.yuxinhua.momeyapp.R
 import com.example.yuxinhua.momeyapp.widgt.UIHandler
 import com.readystatesoftware.systembartint.SystemBarTintManager
@@ -69,6 +71,8 @@ open class BaseFragment:Fragment() {
         return statusBarHeight
     }
 
+    var mPresenter:HomePresent? = null
+    var mModel:HomeModel? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -78,9 +82,13 @@ open class BaseFragment:Fragment() {
             }
 
         })
+
+        mPresenter = HomePresent()
+        mModel = HomeModel()
     }
 
     open fun handlerMessage(msg: Message?){
 
     }
+
 }

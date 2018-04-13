@@ -13,18 +13,25 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.daimajia.slider.library.SliderTypes.BaseSliderView
 import com.daimajia.slider.library.SliderTypes.TextSliderView
+import com.daimajia.slider.library.Tricks.ViewPagerEx
+import com.example.notwork.`object`.HomeInfoItem
+import com.example.notwork.mvp.Contact.HomeCallBack
+import com.example.notwork.mvp.Contact.HomeContact
+import com.example.notwork.mvp.model.HomeModel
+import com.example.notwork.mvp.present.HomePresent
 import com.example.yuxinhua.momeyapp.R
 import com.example.yuxinhua.momeyapp.adapter.HomeAdapter
 import com.example.yuxinhua.momeyapp.widgt.AutoVerticalScrollTextView
 import kotlinx.android.synthetic.main.home_bottom_layout.*
 import kotlinx.android.synthetic.main.home_fragment_layout.*
+import kotlinx.android.synthetic.main.home_fragment_layout.view.*
 
 /**
  * Created by yuxh3
  * On 2018/3/16.
  * Email by 791285437@163.com
  */
-class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener{
+class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener,HomeContact.View{
 
     var viewFragment:View? = null
 
@@ -56,9 +63,7 @@ class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener{
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUrlToMap()
-        lamp_view.initData(lampDataList)
-        lamp_view.setOnClickListener(this)
+        mPresenter?.setVM(this,mModel!!)
 
         val adapter = HomeAdapter(context)
         adapter.setData(imgDataList)
@@ -79,18 +84,31 @@ class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener{
         home_tv_money.setText(spanSrtLeft)
         home_tv_limit.setText(spanSrtRight)
 
+
+        mPresenter?.loadHomeInfo(context,false,object:HomeCallBack<ArrayList<HomeInfoItem>>{
+
+            override fun success(data: ArrayList<HomeInfoItem>) {
+                for (mData in data.iterator()){
+                    urlList.put(mData.name!!,mData.imgUrl)
+
+                    setUrlToMap(data?.size)
+                }
+            }
+
+            override fun error(code: Int, msg: String) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+        })
+
+
     }
 
-    fun setUrlToMap(){
-        urlList.put("集渝粉拿奖励","http://www.yufex.com/fileContext/resource/index_config/imageResource?fileId=2c90d582622a63cd01622c5174bb6f64")
-        urlList.put("优享计划","http://www.yufex.com/fileContext/resource/index_config/imageResource?fileId=2c90d582622a63cd01622db4cd323ccd")
-        urlList.put("运营报告","http://www.yufex.com/fileContext/resource/index_config/imageResource?fileId=2c90d58261d7fed10161f570b62a2273")
-        urlList.put("邀请好友一起来赚钱","http://www.yufex.com/fileContext/resource/index_config/imageResource?fileId=2c90d5825ab16277015ab24fb4a1346c")
-        urlList.put("新手注册礼","http://www.yufex.com/fileContext/resource/index_config/imageResource?fileId=2c90d5825a234828015a2614f43f28ca")
-        urlList.put("qq链接一群","http://www.yufex.com/fileContext/resource/index_config/imageResource?fileId=2c90d582610f2845016121e77f40309a")
+    fun setUrlToMap(size:Int){
 
         for (name in urlList.keys){
             val textSliderView = TextSliderView(context)
+            lampDataList.add(name)
             textSliderView
                     .image(urlList.get(name)!!)
                     .description(name)
@@ -99,8 +117,27 @@ class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener{
             textSliderView.bundle(Bundle())
             textSliderView.bundle.putString("extra",name)
             slider.addSlider(textSliderView)
-            lampDataList.add(name)
         }
+
+        lamp_view.initData(lampDataList)
+        lamp_view.setOnClickListener(this)
+
+        tv_home_number.text = (slider.currentPosition % size+1).toString()+"/"+size
+        slider.addOnPageChangeListener(object :ViewPagerEx.OnPageChangeListener{
+
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+//                Toast.makeText(context,"",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onPageSelected(position: Int) {
+
+                tv_home_number.text = (position % size+1).toString()+"/"+size
+            }
+
+        })
     }
 
     override fun cliclk(name: String) {

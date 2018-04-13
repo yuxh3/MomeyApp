@@ -65,7 +65,7 @@ class AutoVerticalScrollTextView @JvmOverloads constructor(private val mContext:
             setText(mStrings!![0])
             if (mStrings!!.size > 1) {
                 handler.removeMessages(199)
-                handler.sendEmptyMessageDelayed(199, 3000)
+                handler.sendEmptyMessageDelayed(199, 5000)
             }
         }
         val AutoVertical = System.currentTimeMillis() - before
