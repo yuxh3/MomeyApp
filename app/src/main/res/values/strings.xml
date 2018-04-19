@@ -16,6 +16,10 @@
     <string name="txt_jifen">积分</string>
     <string name="txt_yue">余额</string>
     <string name="txt_fenshu">等级分数</string>
+    <string name="txt_forget">忘记密码</string>
+    <string name="txt_login">登录</string>
+    <string name="txt_next">下一步</string>
+    <string name="txt_regist">我已经阅读并同意所注册协议</string>
 
     <string-array name="me_adapter">
         <item>资产统计</item>

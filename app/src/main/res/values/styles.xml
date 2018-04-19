@@ -48,5 +48,19 @@
     </style>
 
 
+    <style name="TextInputLayoutLineColor" parent="Theme.AppCompat.Light">
+        <!--没有获取焦点时的颜色-->
+        <item name="colorControlNormal">@color/txt_gray_theme</item>
+        <!--获取焦点时的颜色-->
+        <!--<item name="colorControlActivated">@color/txt_find_theme</item>-->
+
+        <item name="android:textSize">16sp</item>
+
+        <item name="colorControlActivated">@android:color/white</item>
+        <!--<item name="colorControlActivated">@color/txt_gray_theme</item>-->
+        <item name="colorControlHighlight">@color/txt_baclk_theme</item>
+    </style>
+
+
 
 </resources>

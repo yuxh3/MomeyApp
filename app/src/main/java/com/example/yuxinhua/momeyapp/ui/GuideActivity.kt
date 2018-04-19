@@ -69,7 +69,7 @@ class GuideActivity:BaseActivity(){
         }
 
         view_3.findViewById<View>(R.id.tv_now).setOnClickListener {
-            startActivity(Intent(this@GuideActivity,MainActivity::class.java))
+            startActivity(Intent(this@GuideActivity,LoginActivity::class.java))
             finish()
         }
 

@@ -25,6 +25,7 @@
         <activity android:name=".ui.GuideActivity"/>
         <activity android:name=".widgt.MyAppActivity"
             android:theme="@style/NoTitleDialog"/>
+        <activity android:name=".ui.LoginActivity"/>
     </application>
 
 

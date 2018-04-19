@@ -26,5 +26,4 @@ class HomeModel:HomeContact.Model{
         return init().getHomeInfo().compose(RxSchedulersUtils.io_main())
     }
 
-
 }

@@ -14,4 +14,6 @@ interface DataServer{
 
     @GET("/app/native/getIndexImages")
     fun getHomeInfo():Observable<HomeInfo<HomeInfoItem>>
+
+//    fun getHomeDiag():
 }

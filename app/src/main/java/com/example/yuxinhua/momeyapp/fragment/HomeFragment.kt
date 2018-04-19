@@ -1,5 +1,6 @@
 package com.example.yuxinhua.momeyapp.fragment
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -21,8 +22,10 @@ import com.example.notwork.mvp.model.HomeModel
 import com.example.notwork.mvp.present.HomePresent
 import com.example.yuxinhua.momeyapp.R
 import com.example.yuxinhua.momeyapp.adapter.HomeAdapter
+import com.example.yuxinhua.momeyapp.ui.LoginActivity
 import com.example.yuxinhua.momeyapp.widgt.AutoVerticalScrollTextView
 import kotlinx.android.synthetic.main.home_bottom_layout.*
+import kotlinx.android.synthetic.main.home_center_button.*
 import kotlinx.android.synthetic.main.home_fragment_layout.*
 import kotlinx.android.synthetic.main.home_fragment_layout.view.*
 
@@ -72,8 +75,20 @@ class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener,Hom
         recycle_view.layoutManager = manager
         recycle_view.adapter = adapter
         initData()
+        setRadioGroup()
     }
 
+    fun setRadioGroup(){
+//        rb_group.getChildAt(0).setOnClickListener(object : View.OnClickListener {
+//
+//            override fun onClick(p0: View?) {
+//
+//                val intent = Intent(context,LoginActivity::class.java)
+//                startActivity(intent)
+//            }
+//
+//        })
+    }
     fun initData(){
         val coloSpan = ForegroundColorSpan(Color.parseColor("#000000"))
         val spanSrtLeft = SpannableString(srtLeft.plus(homeData[0]))

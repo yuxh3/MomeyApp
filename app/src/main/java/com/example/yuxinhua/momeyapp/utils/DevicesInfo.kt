@@ -1,7 +1,8 @@
 package com.example.yuxinhua.momeyapp.utils
 
 import android.content.Context
-import android.content.SharedPreferences
+import android.view.WindowManager
+
 
 /**
  * Created by yuxh3
@@ -25,6 +26,20 @@ object DevicesInfo{
     fun pxToDp(context:Context,dpValue:Float):Int{
         val scale = context.getResources().getDisplayMetrics().density
         return (dpValue / scale + 0.5f).toInt()
+    }
+
+    fun getWidth(context:Context):Int{
+
+        val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val width = wm.defaultDisplay.width
+       return width
+    }
+
+    fun getHeight(context:Context):Int{
+        val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val height = wm.defaultDisplay.height
+
+        return height
     }
 
 }

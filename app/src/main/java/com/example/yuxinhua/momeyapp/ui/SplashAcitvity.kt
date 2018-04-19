@@ -69,8 +69,9 @@ class SplashAcitvity:BaseActivity(){
                 mSpdUtils?.setBoolean("isFrist",false)
                 startActivity(Intent(this@SplashAcitvity, GuideActivity::class.java))
             }else{
-                startActivity(Intent(this@SplashAcitvity, MainActivity::class.java))
+                startActivity(Intent(this@SplashAcitvity, LoginActivity::class.java))
             }
+            timer?.cancel()
             finish()
         }
     }
@@ -84,7 +85,7 @@ class SplashAcitvity:BaseActivity(){
                     mSpdUtils?.setBoolean("isFrist",false)
                     startActivity(Intent(this@SplashAcitvity, GuideActivity::class.java))
                 }else{
-                    startActivity(Intent(this@SplashAcitvity, MainActivity::class.java))
+                    startActivity(Intent(this@SplashAcitvity, LoginActivity::class.java))
                 }
                 finish()
             }

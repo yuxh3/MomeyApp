@@ -34,6 +34,8 @@ class HomeAdapter(val context: Context): RecyclerView.Adapter<RecyclerView.ViewH
 //                    .into(holder.home_img)
 
             holder.home_img?.setImageResource(mData[position])
+
+//            holder
         }
     }
 

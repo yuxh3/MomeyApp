@@ -47,7 +47,6 @@ public class CryptoObjectHelper {
     public FingerprintManagerCompat.CryptoObject buildCryptoObject() throws Exception
     {
         @SuppressLint({"NewApi", "LocalSuppress"}) Cipher cipher = createCipher(true);
-//        Log.i("yuxh3","------>"+cipher.doFinal());
         return new FingerprintManagerCompat.CryptoObject(cipher);
     }
 

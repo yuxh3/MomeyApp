@@ -91,4 +91,6 @@ open class BaseFragment:Fragment() {
 
     }
 
+//    fun moveFource
+
 }

@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#7A7E83</color>
 
     <!--<color name="colorPrimary">#00000000</color>-->
     <!--<color name="colorPrimaryDark">#00000000</color>-->
@@ -19,5 +19,6 @@
     <color name="btn_theme_red">#F75359</color>
     <color name="inverst_head_yellow">#FFEAC04B</color>
     <color name="txt_orange">#FF6F00</color>
+    <color name="txt_gray_white">#DCDCDC</color>
 
 </resources>
