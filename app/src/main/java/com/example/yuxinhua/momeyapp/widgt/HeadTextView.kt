@@ -78,5 +78,8 @@ class HeadTextView : LinearLayout {
         iv_right.setImageResource(id)
     }
 
+    fun getLeftImg():View{
+        return iv_left
+    }
 
 }

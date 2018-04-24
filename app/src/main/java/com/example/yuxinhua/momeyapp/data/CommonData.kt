@@ -32,4 +32,9 @@ data class FindItemData(
         var money: String,
         var content:String
 )
+data class DayFinish(
+        var day:Int,
+        var all:Int,
+        var finish:Int
+)
 open class BaseData()

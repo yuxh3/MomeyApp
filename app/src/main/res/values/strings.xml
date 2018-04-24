@@ -20,6 +20,9 @@
     <string name="txt_login">登录</string>
     <string name="txt_next">下一步</string>
     <string name="txt_regist">我已经阅读并同意所注册协议</string>
+    <string name="txt_sign">注：\n 1、30天为一个周期，连续不间断签到，即可获取1150积分（30*10+50+300+500）\n 2、连续签到一个周期
+    或是签到中断后，都会重新开始计算\n 3、积分有效期至今年12月31日24点止，积分商城上线前获得的积分有效期均从2017年2月1日算起\n
+    4、最终解释权归本人所有</string>
 
     <string-array name="me_adapter">
         <item>资产统计</item>

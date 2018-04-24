@@ -23,6 +23,7 @@ import com.example.notwork.mvp.present.HomePresent
 import com.example.yuxinhua.momeyapp.R
 import com.example.yuxinhua.momeyapp.adapter.HomeAdapter
 import com.example.yuxinhua.momeyapp.ui.LoginActivity
+import com.example.yuxinhua.momeyapp.ui.SignActivity
 import com.example.yuxinhua.momeyapp.widgt.AutoVerticalScrollTextView
 import kotlinx.android.synthetic.main.home_bottom_layout.*
 import kotlinx.android.synthetic.main.home_center_button.*
@@ -79,15 +80,15 @@ class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener,Hom
     }
 
     fun setRadioGroup(){
-//        rb_group.getChildAt(0).setOnClickListener(object : View.OnClickListener {
-//
-//            override fun onClick(p0: View?) {
-//
-//                val intent = Intent(context,LoginActivity::class.java)
-//                startActivity(intent)
-//            }
-//
-//        })
+        rb_group.getChildAt(0).setOnClickListener(object : View.OnClickListener {
+
+            override fun onClick(p0: View?) {
+
+                val intent = Intent(context,SignActivity::class.java)
+                startActivity(intent)
+            }
+
+        })
     }
     fun initData(){
         val coloSpan = ForegroundColorSpan(Color.parseColor("#000000"))
@@ -149,7 +150,9 @@ class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener,Hom
 
             override fun onPageSelected(position: Int) {
 
-                tv_home_number.text = (position % size+1).toString()+"/"+size
+                if (tv_home_number != null) {
+                    tv_home_number.text = (position % size + 1).toString() + "/" + size
+                }
             }
 
         })
@@ -157,5 +160,9 @@ class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener,Hom
 
     override fun cliclk(name: String) {
         Toast.makeText(context,name,Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

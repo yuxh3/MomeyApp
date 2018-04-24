@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.yuxinhua.momeyapp.R
+import com.example.yuxinhua.momeyapp.ui.BaseActivity
 import com.example.yuxinhua.momeyapp.ui.MainActivity
 import kotlinx.android.synthetic.main.guide_avivity.*
 import kotlinx.android.synthetic.main.invest_fragment_layout.*
@@ -78,10 +79,6 @@ class InvestFragment : BaseFragment(){
             }
         }
         return dataFragment
-    }
-
-    fun addAnimation(isShow:Boolean){
-        (activity as MainActivity).setLoadingViewShow(isShow)
     }
 
     override fun handlerMessage(msg: Message?) {

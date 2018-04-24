@@ -2,16 +2,19 @@ package com.example.yuxinhua.momeyapp.fragment
 
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Message
 import android.support.v4.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import com.example.yuxinhua.momeyapp.R
+import com.example.yuxinhua.momeyapp.ui.BaseActivity
 import com.example.yuxinhua.momeyapp.ui.LoginActivity
 import com.example.yuxinhua.momeyapp.utils.ToastUtils
 import kotlinx.android.synthetic.main.log_fragment.*
@@ -36,7 +39,6 @@ class LogFragment :BaseFragment(){
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         log_btn_login.isClickable = false
         text_input_password.transformationMethod = PasswordTransformationMethod.getInstance()
         txt_cb.setOnCheckedChangeListener(object :CompoundButton.OnCheckedChangeListener {
@@ -107,9 +109,19 @@ class LogFragment :BaseFragment(){
                 }
 
                 if (text_input_phone.text.toString().equals("18888888888") && text_input_password.text.toString().equals("000000")){
-                    (context as LoginActivity).setFinish()
-                }else{
 
+                    addAnimation(true)
+
+//                    mHandler?.postDelayed(object :Runnable{
+//                        override fun run() {
+//
+//
+//                        }
+//
+//                    },2000)
+
+                    mHandler?.sendEmptyMessageDelayed(0,2000)
+                }else{
                     ToastUtils.setShortMsg(context,"请输入正确的账号密码")
                     return
                 }
@@ -124,4 +136,18 @@ class LogFragment :BaseFragment(){
             ToastUtils.setShortMsg(context,"您再想想？")
         }
     }
+
+    override fun handlerMessage(msg: Message?) {
+        super.handlerMessage(msg)
+
+        addAnimation(false)
+
+        (context as LoginActivity).setFinish()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mHandler?.removeMessages(0)
+    }
+
 }

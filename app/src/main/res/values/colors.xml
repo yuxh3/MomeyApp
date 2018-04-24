@@ -20,5 +20,6 @@
     <color name="inverst_head_yellow">#FFEAC04B</color>
     <color name="txt_orange">#FF6F00</color>
     <color name="txt_gray_white">#DCDCDC</color>
+    <color name="calendar_view_orange">#fe7f5c</color>
 
 </resources>

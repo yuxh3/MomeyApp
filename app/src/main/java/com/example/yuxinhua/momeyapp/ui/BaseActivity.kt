@@ -154,4 +154,15 @@ abstract open class BaseActivity :FragmentActivity() {
             }
         })
     }
+
+    fun getStatusHeight():Int{
+        var statusBarHeight = -1
+        //获取status_bar_height资源的ID
+        val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
+        if (resourceId > 0) {
+            //根据资源ID获取响应的尺寸值
+            statusBarHeight = resources.getDimensionPixelSize(resourceId)
+        }
+        return statusBarHeight
+    }
 }

@@ -7,6 +7,7 @@ import android.view.WindowManager
 import com.example.notwork.mvp.model.HomeModel
 import com.example.notwork.mvp.present.HomePresent
 import com.example.yuxinhua.momeyapp.R
+import com.example.yuxinhua.momeyapp.ui.BaseActivity
 import com.example.yuxinhua.momeyapp.widgt.UIHandler
 import com.readystatesoftware.systembartint.SystemBarTintManager
 
@@ -91,6 +92,8 @@ open class BaseFragment:Fragment() {
 
     }
 
-//    fun moveFource
+    fun addAnimation(isShow:Boolean){
+        (activity as BaseActivity).setLoadingViewShow(isShow)
+    }
 
 }

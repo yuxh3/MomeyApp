@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:openxu="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"  >
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.yuxinhua.momeyapp.widgt.HeadTextView
+        android:id="@+id/sign_headtextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:center = "签到详情"
+        app:leftIcon = "@drawable/public_button_back"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qiandaojiangpai2"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="连续签到1天"
+            android:textSize="16sp"
+            android:layout_marginBottom="40dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="未签到"
+        android:gravity="center"
+        android:background="@drawable/sign_bg"
+        android:textSize="18sp"/>
+
+    </FrameLayout>
+
+    <com.example.yuxinhua.momeyapp.widgt.CalendarView
+        android:paddingTop="20dp"
+        android:id="@+id/sign_cv"
+        android:background="@color/txt_witch_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        openxu:mMonthRowL="@mipmap/custom_calendar_row_left"
+        openxu:mMonthRowR="@mipmap/custom_calendar_row_right"
+        openxu:mMonthRowSpac="20dip"
+
+        openxu:mTextSizeMonth="18sp"
+        openxu:mTextSizeWeek="16sp"
+        openxu:mTextSizeDay="14sp"
+        openxu:mTextSizePre="10sp"
+
+        openxu:mTextColorMonth="#4b4b4b"
+        openxu:mTextColorWeek="#9e9e9d"
+        openxu:mSelectWeekTextColor="#f67633"
+        openxu:mTextColorDay="#686768"
+        openxu:mTextColorPreFinish="#fc7451"
+        openxu:mTextColorPreUnFinish="#60ba8d"
+        openxu:mTextColorPreNull="#cecdcd"
+        openxu:mSelectTextColor="#ffffff"
+
+        openxu:mMonthSpac="8dip"
+        openxu:mLineSpac="4dip"
+        openxu:mTextSpac="4dip"
+
+        openxu:mCurrentBg="#6E6E6E"
+        openxu:mCurrentBgStrokeWidth="1.5dip"
+        openxu:mCurrentBgDashPath="@array/customCalendar_currentDay_bg_DashPath"
+        openxu:mBgWeek="@color/txt_witch_theme"
+        openxu:mBgMonth="@color/inverst_head_yellow"
+        openxu:mSelectRadius="15dip"/>
+
+    <TextView
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/txt_witch_theme"
+        android:textColor="@color/txt_baclk_theme"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_sign"/>
+
+</LinearLayout>
+</ScrollView>
