@@ -60,6 +60,7 @@ class FindFragment : BaseFragment(){
         find_recycle_view.layoutManager = layoutManager
         find_recycle_view.adapter =adapter
 
+        find_recycle_view.smoothScrollToPosition(0)
         flashData()
 
         loadMoreData()
@@ -140,11 +141,33 @@ class FindFragment : BaseFragment(){
         find_refresh_view.setOnRefreshListener(object :SwipeRefreshLayout.OnRefreshListener{
             override fun onRefresh() {
 
+//                setData()
+                refalshItemData()
+//                find_recycle_view.smoothScrollToPosition(0)
                 DiffUtils()
                 mNewData = mData
                 adapter?.setFindData(mNewData)
                 find_refresh_view.isRefreshing = false
+
             }
         })
+    }
+
+    /**
+     * 刷新数据
+     */
+    fun refalshItemData(){
+
+        for(i in 0..3){
+            for (x in 1..5) {
+                if (i != 3){
+                    mItemData.add(FindItemData("10元激活红包", "200"))
+                }
+
+            }
+            if (i == 3){
+                mData.add(FindData(i, mItemData))
+            }
+        }
     }
 }
