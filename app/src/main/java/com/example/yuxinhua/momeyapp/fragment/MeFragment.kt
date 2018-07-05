@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.yuxinhua.momeyapp.R
+import com.example.yuxinhua.momeyapp.adapter.GridViewAdapter
 import com.example.yuxinhua.momeyapp.adapter.MeAdapter
 import com.example.yuxinhua.momeyapp.adapter.MeAdapterDecoration
 import com.example.yuxinhua.momeyapp.data.MeData
@@ -49,13 +50,16 @@ class MeFragment : BaseFragment(){
         for (i in 0..imgData.size -1){
             mData?.add(MeData(imgData.get(i),array[i]))
         }
-        val mAdapter = MeAdapter(context)
-        mAdapter.setData(mData!!)
+//        val mAdapter = MeAdapter(context)
+        val mAdapter = GridViewAdapter(context,mData!!)
+//        mAdapter.setData(mData!!)
 
         val layManager = GridLayoutManager(context,3)
-        me_recycle_view.layoutManager = layManager!!
-        me_recycle_view.addItemDecoration(MeAdapterDecoration(context,3))
-        me_recycle_view.adapter = mAdapter
+//        me_recycle_view.layoutManager = layManager!!
+//        me_recycle_view.addItemDecoration(MeAdapterDecoration(context,3))
+//        me_recycle_view.adapter = mAdapter
+
+        my_gridview.adapter = mAdapter
 
 
     }

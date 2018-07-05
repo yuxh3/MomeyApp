@@ -101,23 +101,23 @@ class HomeFragment:BaseFragment(),AutoVerticalScrollTextView.OnClickListener,Hom
         home_tv_limit.setText(spanSrtRight)
 
 
-        mPresenter?.loadHomeInfo(context,false,object:HomeCallBack<ArrayList<HomeInfoItem>>{
-
-            override fun success(data: ArrayList<HomeInfoItem>) {
-                for (mData in data.iterator()){
-                    urlList.put(mData.name!!,mData.imgUrl)
-
-                    setUrlToMap(data?.size)
-                }
-            }
-
-            override fun error(code: Int, msg: String) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-        })
-
-
+//        mPresenter?.loadHomeInfo(context,false,object:HomeCallBack<ArrayList<HomeInfoItem>>{
+//
+//            override fun success(data: ArrayList<HomeInfoItem>) {
+//                for (mData in data.iterator()){
+//                    urlList.put(mData.name!!,mData.imgUrl)
+//
+//                    setUrlToMap(data?.size)
+//                }
+//            }
+//
+//            override fun error(code: Int, msg: String) {
+//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//            }
+//
+//        })
+//
+//
     }
 
     fun setUrlToMap(size:Int){

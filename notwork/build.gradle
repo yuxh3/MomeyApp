@@ -7,8 +7,6 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 26
 
-
-
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 26
@@ -24,6 +22,15 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        packagingOptions {
+            exclude 'META-INF/DEPENDENCIES'
+            exclude 'META-INF/NOTICE'
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/LICENSE.txt'
+            exclude 'META-INF/NOTICE.txt'
+            pickFirst 'META-INF/*'
+        }
     }
 
 }
@@ -37,9 +44,16 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    compile 'com.squareup.okhttp3:logging-interceptor:3.4.2'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'io.reactivex:rxandroid:1.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.3'
+
+    //RxJava相关
+//    implementation(['io.reactivex.rxjava2:rxandroid:2.0.1',
+//             'io.reactivex.rxjava2:rxjava:2.1.3'])
+//    implementation 'io.reactivex:rxandroid:1.1.0'
 }

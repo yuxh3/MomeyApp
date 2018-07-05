@@ -11,4 +11,6 @@ object Common{
     val CONNECT_TIME_OUT :Long= 10 *1000
     val CACHE_STALE_SEC :Long = 60 *60 *24*2
     val BASEURL = "http://www.yufex.com/"
+
+    val BASE_BEN_LAI="https://www.benlai.com/ICategory/"
 }

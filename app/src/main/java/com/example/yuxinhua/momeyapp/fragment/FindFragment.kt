@@ -6,13 +6,9 @@ import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Switch
-import android.widget.Toast
 import com.example.yuxinhua.momeyapp.R
 import com.example.yuxinhua.momeyapp.adapter.FindAdapter
 import com.example.yuxinhua.momeyapp.data.FindData

@@ -5,11 +5,11 @@ import com.example.notwork.`object`.Common
 import com.example.notwork.server.DataServer
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
@@ -48,8 +48,8 @@ class DataApi private constructor(){
         val retrofit = Retrofit.Builder()
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl(Common.BASEURL)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl(Common.BASE_BEN_LAI)
                 .build()
         val dataService = retrofit.create(DataServer::class.java)
 

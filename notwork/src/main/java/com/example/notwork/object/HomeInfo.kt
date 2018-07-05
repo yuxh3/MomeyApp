@@ -6,9 +6,10 @@ package com.example.notwork.`object`
  * Email by 791285437@163.com
  */
 data class HomeInfo<T>(
-        var code:String = "0",
-        var message:String = "",
-        var data:ArrayList<T>
+        var error:String,
+        var message:String,
+//        var data:ArrayList<T>,
+        var data:T
 )
 data class HomeInfoItem(
         var id:String?,
@@ -33,4 +34,35 @@ data class HomeInfoItem(
 data class Type(
         var key:String,
         var name:String
+)
+data class BenLaiData(
+        var error: String,
+        var message: String,
+        var data:BenLaiItemData
+)
+data class BenLaiItemData(
+        var menu:ArrayList<BenLaiItemMenu>,
+        var allCategory:ArrayList<BenLaiItemAllCategory>
+)
+data class BenLaiItemMenu(
+        var isSelected:Boolean,
+        var sysNo:Int,
+        var name:String,
+        var imgUrl:String
+)
+data class BenLaiItemAllCategory(
+        var parentSysNo:Int,
+        var adList:ArrayList<BenLaiItemList>,
+        var category:ArrayList<BenLaiItemCate>
+)
+data class BenLaiItemList(
+        var uri:String=""
+)
+data class BenLaiItemCate(
+        var parentSysNo:Int,
+        var children:ArrayList<BenLaiItemCate>,
+        var isSelected:Boolean,
+        var sysNo:Int,
+        var name:String,
+        var imgUrl:String
 )

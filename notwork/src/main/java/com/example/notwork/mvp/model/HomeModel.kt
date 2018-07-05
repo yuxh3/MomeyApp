@@ -1,12 +1,14 @@
 package com.example.notwork.mvp.model
 
 import com.example.notwork.Api.DataApi
+import com.example.notwork.`object`.BenLaiData
+import com.example.notwork.`object`.BenLaiItemData
 import com.example.notwork.`object`.HomeInfo
 import com.example.notwork.`object`.HomeInfoItem
 import com.example.notwork.mvp.Contact.HomeContact
 import com.example.notwork.mvp.Contact.RxSchedulersUtils
 import com.example.notwork.server.DataServer
-import rx.Observable
+import io.reactivex.Observable
 
 /**
  * Created by yuxh3
@@ -26,4 +28,8 @@ class HomeModel:HomeContact.Model{
         return init().getHomeInfo().compose(RxSchedulersUtils.io_main())
     }
 
+
+    override fun getBenLaiData():Observable<HomeInfo<BenLaiItemData>>{
+        return init().getHomeDiag().compose(RxSchedulersUtils.io_main())
+    }
 }

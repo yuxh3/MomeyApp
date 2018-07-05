@@ -13,6 +13,7 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import com.example.yuxinhua.momeyapp.R
+import com.example.yuxinhua.momeyapp.utils.DevicesInfo
 import com.example.yuxinhua.momeyapp.utils.SPDUtils
 import com.example.yuxinhua.momeyapp.widgt.RecentLoadingView
 import com.readystatesoftware.systembartint.SystemBarTintManager

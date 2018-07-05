@@ -1,9 +1,7 @@
 package com.example.notwork.mvp.Contact
 
-import rx.Observable
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
-
+import io.reactivex.ObservableTransformer
+import io.reactivex.android.schedulers.AndroidSchedulers
 /**
  * Created by yuxh3
  * On 2018/4/11.
@@ -11,10 +9,17 @@ import rx.schedulers.Schedulers
  */
 class RxSchedulersUtils{
     companion object {
-        fun <T> io_main(): Observable.Transformer<T,T>{
-            return Observable.Transformer {
-                Observable -> Observable.subscribeOn(Schedulers.io())
+        fun <T> io_main(): ObservableTransformer<T, T> {
+            return ObservableTransformer {
+                Observable -> Observable.subscribeOn(io.reactivex.schedulers.Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
+            }
+        }
+
+
+        fun <T> compose(): ObservableTransformer<T, T> {
+            return ObservableTransformer { observable ->
+                observable.subscribeOn(io.reactivex.schedulers.Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
             }
         }
     }

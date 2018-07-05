@@ -1,10 +1,20 @@
 package com.example.yuxinhua.momeyapp.utils
 
+import android.app.Activity
+import android.content.ComponentCallbacks
 import android.content.Context
+import android.content.res.Configuration
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.RectF
+import android.media.VolumeShaper
+import android.util.DisplayMetrics
+import android.util.Log
 import android.view.WindowManager
+import com.example.yuxinhua.momeyapp.ui.LoginActivity
+import com.example.yuxinhua.momeyapp.ui.MyApplication
+import com.example.yuxinhua.momeyapp.widgt.MyAppActivity
+import java.text.DecimalFormat
 
 
 /**
@@ -84,4 +94,92 @@ object DevicesInfo{
         return (rect.bottom+rect.top-(fm.bottom+fm.top))/2
     }
 
+    private var appDensity:Float=0.0f
+    private var appScaledDensity:Float=0.0f
+    private lateinit var appDisplayMetrics: DisplayMetrics
+
+    fun setDensity(application : MyApplication){
+        //获取application的DisplayMetrics
+        appDisplayMetrics = application.getResources().getDisplayMetrics();
+
+        if (appDensity == 0.0f) {
+            //初始化的时候赋值
+            appDensity = appDisplayMetrics.density
+            appScaledDensity = appDisplayMetrics.scaledDensity
+
+            //添加字体变化的监听
+
+            application.registerComponentCallbacks(object :ComponentCallbacks {
+                override fun onConfigurationChanged(newConfig: Configuration?) {
+
+                    //字体改变后,将appScaledDensity重新赋值
+                    if (newConfig != null && newConfig.fontScale > 0) {
+                        appScaledDensity = application.getResources().getDisplayMetrics().scaledDensity
+                    }
+                }
+
+                override fun onLowMemory() {
+                }
+
+            })
+        }
+
+        Log.i("yuxh3","appDensity-----"+appDensity+"-----appScaledDensity----"+appScaledDensity+"-----appDisplayMetrics---"+appDisplayMetrics)
+    }
+
+    fun setDefault(acitvity:Activity){
+        setOrientation(acitvity, "360")
+    }
+
+    fun setOrientation(activity:Activity,orientation:String){
+        setAppOrientation(activity, orientation)
+    }
+
+    fun setAppOrientation(activity:Activity,orientation:String){
+        var targetDensity:Float=0.0f
+        try {
+            var division:Double
+            //根据带入参数选择不同的适配方向
+            if (orientation.equals("height")) {
+                division = division(appDisplayMetrics.heightPixels.toDouble(), 667.0);
+            } else {
+                division = division(appDisplayMetrics.widthPixels.toDouble(), 360.0);
+            }
+            //由于手机的长宽不尽相同,肯定会有除不尽的情况,有失精度,所以在这里把所得结果做了一个保留两位小数的操作
+             val df:DecimalFormat =  DecimalFormat("0.00")
+             var s :String = df.format(division)
+            targetDensity = s.toFloat()
+        } catch ( e:NumberFormatException) {
+            e.printStackTrace()
+        }
+
+        val targetScaledDensity:Float = targetDensity * (appScaledDensity / appDensity);
+        val targetDensityDpi:Int = (160 * targetDensity).toInt()
+
+        /**
+         *
+         * 最后在这里将修改过后的值赋给系统参数
+         *
+         * 只修改Activity的density值
+         */
+
+        val  activityDisplayMetrics = activity.getResources().getDisplayMetrics();
+        activityDisplayMetrics.density = targetDensity
+        activityDisplayMetrics.scaledDensity = targetScaledDensity
+        activityDisplayMetrics.densityDpi = targetDensityDpi
+
+
+        Log.i("yuxh3","targetDensity-----"+targetDensity+"-----targetScaledDensity----"+targetScaledDensity+"-----targetDensityDpi---"+targetDensityDpi)
+
+    }
+
+    fun division(a:Double,b:Double):Double{
+        var div:Double = 0.0
+        if (b != 0.0){
+            div = a/b
+        }else{
+            div = 0.0
+        }
+        return div
+    }
 }

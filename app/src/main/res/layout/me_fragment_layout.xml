@@ -77,14 +77,26 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/me_recycle_view"
-        android:layout_marginTop="15dp"
-        android:background="@color/txt_witch_theme"
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/me_recycle_view"-->
+        <!--android:layout_marginTop="15dp"-->
+        <!--android:background="@color/txt_witch_theme"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+    <!--</android.support.v7.widget.RecyclerView>-->
+
+    <com.example.yuxinhua.momeyapp.widgt.MyGridView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v7.widget.RecyclerView>
-
+        android:layout_height="wrap_content"
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:id="@+id/my_gridview"
+        android:numColumns="3"
+        android:gravity="center"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        />
 
 </LinearLayout>

@@ -1,11 +1,12 @@
 package com.example.notwork.mvp.Contact
 
+import com.example.notwork.`object`.BenLaiItemData
 import com.example.notwork.`object`.HomeInfo
 import com.example.notwork.`object`.HomeInfoItem
 import com.example.notwork.mvp.model.BaseModel
 import com.example.notwork.mvp.present.BasePresenter
 import com.example.notwork.mvp.ui.BaseView
-import rx.Observable
+import io.reactivex.Observable
 
 /**
  * Created by yuxh3
@@ -16,6 +17,8 @@ interface HomeContact{
 
     interface Model :BaseModel{
         fun getHomeInfo():Observable<HomeInfo<HomeInfoItem>>
+
+        fun getBenLaiData():Observable<HomeInfo<BenLaiItemData>>
     }
 
     interface View:BaseView{

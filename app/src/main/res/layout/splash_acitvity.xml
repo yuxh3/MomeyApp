@@ -32,4 +32,15 @@
         android:textSize="12sp"
         android:textColor="@color/txt_gray_theme"/>
 
+    <TextView
+        android:id="@+id/tv_cess"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:text="测试"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:background="#000"/>
+
 </FrameLayout>
