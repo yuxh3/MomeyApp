@@ -32,7 +32,7 @@ class BenMenuAdapter(val context:Context,val data:BenLaiItemData) : RecyclerView
         holder?.tvContent?.setOnClickListener(object :View.OnClickListener{
             override fun onClick(p0: View?) {
                 (context as BenLaiActivity).callBack(position)
-                holder.menuLay?.setBackgroundColor(Color.TRANSPARENT)
+//                holder.menuLay?.setBackgroundColor(Color.TRANSPARENT)
             }
         })
 

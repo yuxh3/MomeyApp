@@ -23,16 +23,16 @@ abstract class HttpResultSubscriber<T>(context: Context,isShow:Boolean): Observe
 
 
     override fun onComplete() {
-        Log.i("yuxh3","------------->onCompleted")
+//        Log.i("yuxh3","------------->onCompleted")
     }
 
     override fun onNext(t: HomeInfo<T>) {
-        Log.i("yuxh3","------------->onNext")
+//        Log.i("yuxh3","------------->onNext")
         onSuccess(t.data)
     }
 
     override fun onError(e: Throwable) {
-        Log.i("yuxh3","------------->onError")
+//        Log.i("yuxh3","------------->onError")
         onFailue(e.toString())
     }
 

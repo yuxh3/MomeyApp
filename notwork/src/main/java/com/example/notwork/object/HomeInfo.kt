@@ -43,6 +43,7 @@ data class BenLaiData(
 data class BenLaiItemData(
         var menu:ArrayList<BenLaiItemMenu>,
         var allCategory:ArrayList<BenLaiItemAllCategory>
+
 )
 data class BenLaiItemMenu(
         var isSelected:Boolean,
@@ -53,7 +54,8 @@ data class BenLaiItemMenu(
 data class BenLaiItemAllCategory(
         var parentSysNo:Int,
         var adList:ArrayList<BenLaiItemList>,
-        var category:ArrayList<BenLaiItemCate>
+        var category:ArrayList<BenLaiItemCate>,
+        var isBootom :Boolean = false
 )
 data class BenLaiItemList(
         var uri:String=""
